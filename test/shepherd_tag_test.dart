@@ -79,5 +79,17 @@ void main() {
       );
       expect(find.byType(ShepherdPageTag), findsOneWidget);
     });
+
+    testWidgets('works without child (annotation style)', (tester) async {
+      await tester.pumpWidget(
+        const Directionality(
+          textDirection: TextDirection.ltr,
+          child: ShepherdPageTag(
+            id: 'US-005',
+          ),
+        ),
+      );
+      expect(find.byType(ShepherdPageTag), findsOneWidget);
+    });
   });
 }

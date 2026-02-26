@@ -36,7 +36,9 @@ class ShepherdPageTag extends StatelessWidget {
 
   /// The child widget to wrap. The layout and behavior of [child] are
   /// not affected.
-  final Widget child;
+  ///
+  /// When used as an annotation, this can be omitted.
+  final Widget? child;
 
   /// Whether this feature is ready to be tested.
   ///
@@ -48,7 +50,7 @@ class ShepherdPageTag extends StatelessWidget {
   const ShepherdPageTag({
     super.key,
     required this.id,
-    required this.child,
+    this.child,
     this.isReady = true,
   });
 
@@ -59,7 +61,7 @@ class ShepherdPageTag extends StatelessWidget {
       label: 'shepherd:$id',
       child: MetaData(
         metaData: _ShepherdMetaData(id: id, isReady: isReady),
-        child: child,
+        child: child ?? const SizedBox.shrink(),
       ),
     );
   }
