@@ -1,0 +1,5 @@
+domains:
+  - "auth"
+  - "security"
+  - "onboarding"
+  - "dashboard"

@@ -1,0 +1,6 @@
+- id: "new_auth_flow"
+  description: "Enable the new Firebase authentication flow"
+  enabled: true
+- id: "dark_mode"
+  description: "Enable dark mode experiment"
+  enabled: false

@@ -1,0 +1,12 @@
+appId: ${APP_ID}
+---
+- launchApp
+- assertVisible: "shepherd:US-002"
+
+# Story: Fluxo de Cadastro de Novos Usuários
+# Description: Como novo usuário, quero criar uma conta para utilizar o Shepherd.
+# Registered Tasks:
+# - Criar formulário de registro
+
+# Automatic Steps (from @ShepherdTag constants):
+- tapOn: "signup_button"

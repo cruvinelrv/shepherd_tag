@@ -1,6 +1,6 @@
 name: shepherd_tag
 description: Lightweight tagging system for the Shepherd automation suite.
-version: 0.0.2
+version: 0.0.3
 homepage: https://github.com/cruvinelrv/shepherd_tag
 repository: https://github.com/cruvinelrv/shepherd_tag
 issue_tracker: https://github.com/cruvinelrv/shepherd_tag/issues

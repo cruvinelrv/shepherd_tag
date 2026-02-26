@@ -1,0 +1,4 @@
+DEV: "develop"
+UAT: "release"
+PRD: "main"
+QA: "qa-testing"

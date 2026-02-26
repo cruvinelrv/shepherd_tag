@@ -23,7 +23,7 @@ Add `shepherd_tag` to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  shepherd_tag: ^0.0.1
+  shepherd_tag: ^0.0.3
 ```
 
 ---

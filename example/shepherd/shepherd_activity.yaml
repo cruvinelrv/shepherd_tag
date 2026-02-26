@@ -1,0 +1,31 @@
+- type: "user_story"
+  id: "US-001"
+  title: "Fluxo de Login Principal"
+  description: "Como usuário, quero me autenticar para acessar o dashboard de forma segura."
+  domains: ["auth", "security"]
+  status: "open"
+  created_by: "vinicius"
+  created_at: "2026-02-26T10:30:00Z"
+  tasks:
+    - id: "TASK-01"
+      title: "Validar campos de entrada"
+      status: "open"
+      assignee: "vinicius"
+    - id: "TASK-02"
+      title: "Implementar autenticação via Firebase"
+      status: "open"
+      assignee: "vinicius"
+
+- type: "user_story"
+  id: "US-002"
+  title: "Fluxo de Cadastro de Novos Usuários"
+  description: "Como novo usuário, quero criar uma conta para utilizar o Shepherd."
+  domains: ["auth", "onboarding"]
+  status: "open"
+  created_by: "vinicius"
+  created_at: "2026-02-26T10:35:00Z"
+  tasks:
+    - id: "TASK-03"
+      title: "Criar formulário de registro"
+      status: "open"
+      assignee: "vinicius"

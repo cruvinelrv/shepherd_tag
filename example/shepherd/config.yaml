@@ -1,0 +1,3 @@
+repoType: "github"
+pullRequestEnabled: true
+autoSync: true

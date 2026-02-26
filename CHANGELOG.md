@@ -1,3 +1,8 @@
+## 0.0.3
+
+* Updated documentation and examples to match version 0.0.3.
+* Internal package maintenance.
+
 ## 0.0.2
 
 * Fixed `ShepherdPageTag` to allow its use as a metadata annotation by making the `child` parameter optional.

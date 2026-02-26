@@ -1,27 +1,6 @@
-// ignore_for_file: avoid_print
 import 'package:flutter/material.dart';
 import 'package:shepherd_tag/shepherd_tag.dart';
-
-// -------------------------------------------------------------------
-// CONTRACT FILE (lib/features/auth/auth_tags.dart)
-// The developer creates one of these per feature/story and annotates
-// it with @ShepherdTag so the Shepherd CLI can discover it.
-// -------------------------------------------------------------------
-
-@ShepherdTag(
-  id: 'US-001',
-  description: 'Login flow with valid credentials',
-)
-class AuthTags {
-  /// Semantic key for the e-mail input field.
-  static const String emailField = 'auth_email_field';
-
-  /// Semantic key for the password input field.
-  static const String passwordField = 'auth_password_field';
-
-  /// Semantic key for the submit button.
-  static const String submitButton = 'auth_submit_button';
-}
+import 'lib/tags.dart';
 
 // -------------------------------------------------------------------
 // PAGE (lib/features/auth/presentation/login_page.dart)
@@ -43,14 +22,15 @@ class LoginPage extends StatelessWidget {
           child: Column(
             children: [
               Semantics(
-                label: AuthTags.emailField,
+                label: LoginPageTags
+                    .emailField, // Placeholder but illustrating usage
                 child: const TextField(
                   decoration: InputDecoration(labelText: 'E-mail'),
                 ),
               ),
               const SizedBox(height: 16),
               Semantics(
-                label: AuthTags.passwordField,
+                label: LoginPageTags.forgotPassword,
                 child: const TextField(
                   obscureText: true,
                   decoration: InputDecoration(labelText: 'Password'),
@@ -58,9 +38,9 @@ class LoginPage extends StatelessWidget {
               ),
               const SizedBox(height: 32),
               Semantics(
-                label: AuthTags.submitButton,
+                label: LoginPageTags.loginButton,
                 child: ElevatedButton(
-                  onPressed: () => print('Login pressed'),
+                  onPressed: () => debugPrint('Login pressed'),
                   child: const Text('Sign In'),
                 ),
               ),
