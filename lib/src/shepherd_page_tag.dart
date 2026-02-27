@@ -56,12 +56,29 @@ class ShepherdPageTag extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Semantics(
-      container: false,
-      label: 'shepherd:$id',
-      child: MetaData(
-        metaData: _ShepherdMetaData(id: id, isReady: isReady),
-        child: child ?? const SizedBox.shrink(),
+    return MetaData(
+      metaData: _ShepherdMetaData(id: id, isReady: isReady),
+      child: Stack(
+        children: [
+          // Render the tag physically behind the application child so it is
+          // visually obscured by the Scaffold's opaque background, but fully
+          // present in the standard rendering pipeline. This forces CanvasKit
+          // to emit an explicit, readable accessibility text node for Maestro
+          // without triggering any CSS visual culling optimizations.
+          Semantics(
+            label: 'shepherd:$id',
+            identifier: 'shepherd:$id',
+            child: Text(
+              'shepherd:$id',
+              textDirection: TextDirection.ltr,
+              style: const TextStyle(
+                fontSize: 1,
+                color: Color(0xFF222222), // Fully opaque color
+              ),
+            ),
+          ),
+          if (child != null) child!,
+        ],
       ),
     );
   }

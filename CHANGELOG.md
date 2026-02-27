@@ -1,3 +1,8 @@
+## 0.0.4 - 2026-02-27
+
+* Added `label` parameter to `ShepherdPageTag` widget to improve visibility during automated tests (Maestro) on Flutter Web.
+* Improved accessibility by mapping shepherd IDs to `aria-label` in the web DOM.
+
 ## 0.0.3
 
 * Updated documentation and examples to match version 0.0.3.
