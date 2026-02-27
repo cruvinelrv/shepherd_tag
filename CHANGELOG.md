@@ -1,3 +1,7 @@
+## 0.0.6 - 2026-02-27
+
+* Fixed `README.md` documentation to correctly reflect the `Key` nomenclature and current versioning.
+
 ## 0.0.5 - 2026-02-27
 
 * Aligned nomenclature to `Key` across the package (`ShepherdPageKey`, `ShepherdElementKey`) for consistency.
