@@ -1,3 +1,9 @@
+## 0.0.5 - 2026-02-27
+
+* Aligned nomenclature to `Key` across the package (`ShepherdPageKey`, `ShepherdElementKey`) for consistency.
+* Replaced direct `Semantics` usage in documentation and examples with `ShepherdElementKey`.
+* Standardized `ShepherdPageKey` with explicit `label` and `identifier` for enhanced Maestro visibility on Web.
+
 ## 0.0.4 - 2026-02-27
 
 * Added `label` parameter to `ShepherdPageTag` widget to improve visibility during automated tests (Maestro) on Flutter Web.

@@ -11,7 +11,7 @@ Lightweight tagging system for the [Shepherd](https://pub.dev/packages/shepherd)
 ## Features
 
 - `@ShepherdTag` — annotates a contract/constants file with a story `id`
-- `ShepherdPageTag` — embeds the `id` into the widget tree via `Semantics`, making it detectable by Maestro and the Shepherd CLI
+- `ShepherdPageKey` — embeds the `id` into the widget tree via `Semantics`, making it detectable by Maestro and the Shepherd CLI
 - **Zero runtime dependencies** beyond the Flutter SDK
 - **No impact** on UI layout or behavior
 
@@ -47,7 +47,7 @@ class AuthTags {
 }
 ```
 
-### 2. Wrap your page with `ShepherdPageTag`
+### 2. Wrap your page with `ShepherdPageKey`
 
 ```dart
 // lib/features/auth/presentation/login_page.dart
@@ -57,17 +57,17 @@ import '../auth_tags.dart';
 class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return ShepherdPageTag(
+    return ShepherdPageKey(
       id: 'US-001',
       child: Scaffold(
         body: Column(
           children: [
-            Semantics(
-              label: AuthTags.emailField,
+            ShepherdElementKey(
+              id: AuthTags.emailField,
               child: const TextField(...),
             ),
-            Semantics(
-              label: AuthTags.submitButton,
+            ShepherdElementKey(
+              id: AuthTags.submitButton,
               child: ElevatedButton(...),
             ),
           ],
@@ -97,7 +97,7 @@ shepherd test gen --story US-001
 | `id`          | `String`  | ✅        | Unique story/feature identifier        |
 | `description` | `String?` | ❌        | Human-readable description for the CLI |
 
-### `ShepherdPageTag`
+### `ShepherdPageKey`
 
 | Parameter  | Type      | Required | Default | Description                               |
 |------------|-----------|----------|---------|-------------------------------------------|

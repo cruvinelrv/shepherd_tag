@@ -13,7 +13,7 @@ class LoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ShepherdPageTag(
+    return ShepherdPageKey(
       id: 'US-001', // identifies the page by its User Story id
       child: Scaffold(
         appBar: AppBar(title: const Text('Login')),
@@ -21,24 +21,23 @@ class LoginPage extends StatelessWidget {
           padding: const EdgeInsets.all(24),
           child: Column(
             children: [
-              Semantics(
-                label: LoginPageTags
-                    .emailField, // Placeholder but illustrating usage
+              ShepherdElementKey(
+                id: LoginPageTags.emailField,
                 child: const TextField(
                   decoration: InputDecoration(labelText: 'E-mail'),
                 ),
               ),
               const SizedBox(height: 16),
-              Semantics(
-                label: LoginPageTags.forgotPassword,
+              ShepherdElementKey(
+                id: LoginPageTags.forgotPassword,
                 child: const TextField(
                   obscureText: true,
                   decoration: InputDecoration(labelText: 'Password'),
                 ),
               ),
               const SizedBox(height: 32),
-              Semantics(
-                label: LoginPageTags.loginButton,
+              ShepherdElementKey(
+                id: LoginPageTags.loginButton,
                 child: ElevatedButton(
                   onPressed: () => debugPrint('Login pressed'),
                   child: const Text('Sign In'),

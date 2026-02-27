@@ -8,7 +8,7 @@ import 'package:flutter/widgets.dart';
 ///
 /// ### Usage
 ///
-/// Wrap your page or feature widget with [ShepherdPageTag]:
+/// Wrap your page or feature widget with [ShepherdPageKey]:
 ///
 /// ```dart
 /// import 'package:shepherd_tag/shepherd_tag.dart';
@@ -18,7 +18,7 @@ import 'package:flutter/widgets.dart';
 ///
 ///   @override
 ///   Widget build(BuildContext context) {
-///     return ShepherdPageTag(
+///     return ShepherdPageKey(
 ///       id: 'US-001',
 ///       child: Scaffold(
 ///         body: LoginForm(),
@@ -27,7 +27,7 @@ import 'package:flutter/widgets.dart';
 ///   }
 /// }
 /// ```
-class ShepherdPageTag extends StatelessWidget {
+class ShepherdPageKey extends StatelessWidget {
   /// The unique identifier for this page/feature.
   ///
   /// Should match the [id] used in the corresponding [@ShepherdTag]
@@ -46,8 +46,8 @@ class ShepherdPageTag extends StatelessWidget {
   /// this page. Defaults to `true`.
   final bool isReady;
 
-  /// Creates a [ShepherdPageTag].
-  const ShepherdPageTag({
+  /// Creates a [ShepherdPageKey].
+  const ShepherdPageKey({
     super.key,
     required this.id,
     this.child,
@@ -66,6 +66,8 @@ class ShepherdPageTag extends StatelessWidget {
           // to emit an explicit, readable accessibility text node for Maestro
           // without triggering any CSS visual culling optimizations.
           Semantics(
+            container: true,
+            explicitChildNodes: true,
             label: 'shepherd:$id',
             identifier: 'shepherd:$id',
             child: Text(

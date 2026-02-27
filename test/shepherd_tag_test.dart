@@ -20,12 +20,12 @@ void main() {
     });
   });
 
-  group('ShepherdPageTag widget', () {
+  group('ShepherdPageKey widget', () {
     testWidgets('renders child unchanged', (tester) async {
       await tester.pumpWidget(
         const Directionality(
           textDirection: TextDirection.ltr,
-          child: ShepherdPageTag(
+          child: ShepherdPageKey(
             id: 'US-001',
             child: Text('Hello Shepherd'),
           ),
@@ -40,14 +40,14 @@ void main() {
       await tester.pumpWidget(
         const Directionality(
           textDirection: TextDirection.ltr,
-          child: ShepherdPageTag(
+          child: ShepherdPageKey(
             id: 'US-001',
             child: SizedBox(),
           ),
         ),
       );
 
-      final semantics = tester.getSemantics(find.byType(ShepherdPageTag));
+      final semantics = tester.getSemantics(find.byType(ShepherdPageKey));
       expect(semantics.label, contains('shepherd:US-001'));
 
       handle.dispose();
@@ -57,39 +57,39 @@ void main() {
       await tester.pumpWidget(
         const Directionality(
           textDirection: TextDirection.ltr,
-          child: ShepherdPageTag(
+          child: ShepherdPageKey(
             id: 'US-003',
             child: SizedBox(),
           ),
         ),
       );
-      expect(find.byType(ShepherdPageTag), findsOneWidget);
+      expect(find.byType(ShepherdPageKey), findsOneWidget);
     });
 
     testWidgets('accepts isReady false without errors', (tester) async {
       await tester.pumpWidget(
         const Directionality(
           textDirection: TextDirection.ltr,
-          child: ShepherdPageTag(
+          child: ShepherdPageKey(
             id: 'US-004',
             isReady: false,
             child: SizedBox(),
           ),
         ),
       );
-      expect(find.byType(ShepherdPageTag), findsOneWidget);
+      expect(find.byType(ShepherdPageKey), findsOneWidget);
     });
 
     testWidgets('works without child (annotation style)', (tester) async {
       await tester.pumpWidget(
         const Directionality(
           textDirection: TextDirection.ltr,
-          child: ShepherdPageTag(
+          child: ShepherdPageKey(
             id: 'US-005',
           ),
         ),
       );
-      expect(find.byType(ShepherdPageTag), findsOneWidget);
+      expect(find.byType(ShepherdPageKey), findsOneWidget);
     });
   });
 }
