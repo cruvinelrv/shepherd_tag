@@ -1,3 +1,7 @@
+## 0.0.7 - 2026-06-29
+
+* Expose public metadata classes (`ShepherdPageMetaData` and `ShepherdElementMetaData`) to support hit-testing and pointer interaction tracking (e.g. for heatmap analysis).
+
 ## 0.0.6 - 2026-02-27
 
 * Fixed `README.md` documentation to correctly reflect the `Key` nomenclature and current versioning.
