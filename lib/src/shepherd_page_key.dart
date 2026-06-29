@@ -57,7 +57,7 @@ class ShepherdPageKey extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MetaData(
-      metaData: _ShepherdMetaData(id: id, isReady: isReady),
+      metaData: ShepherdPageMetaData(id: id, isReady: isReady),
       child: Stack(
         children: [
           // Render the tag physically behind the application child so it is
@@ -86,11 +86,10 @@ class ShepherdPageKey extends StatelessWidget {
   }
 }
 
-/// Internal metadata object attached to the widget tree.
-/// Used programmatically by the Shepherd CLI scanner.
-class _ShepherdMetaData {
+/// Metadata object attached to the widget tree for pages.
+class ShepherdPageMetaData {
   final String id;
   final bool isReady;
 
-  const _ShepherdMetaData({required this.id, required this.isReady});
+  const ShepherdPageMetaData({required this.id, required this.isReady});
 }

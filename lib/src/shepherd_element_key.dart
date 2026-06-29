@@ -21,12 +21,21 @@ class ShepherdElementKey extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Semantics(
-      container: true,
-      explicitChildNodes: true,
-      label: id,
-      identifier: id,
-      child: child,
+    return MetaData(
+      metaData: ShepherdElementMetaData(id: id),
+      child: Semantics(
+        container: true,
+        explicitChildNodes: true,
+        label: id,
+        identifier: id,
+        child: child,
+      ),
     );
   }
+}
+
+/// Metadata object attached to the widget tree for elements.
+class ShepherdElementMetaData {
+  final String id;
+  const ShepherdElementMetaData({required this.id});
 }
