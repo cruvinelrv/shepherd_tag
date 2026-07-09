@@ -13,23 +13,31 @@ class ShepherdElementKey extends StatelessWidget {
   /// The child widget to wrap.
   final Widget child;
 
+  /// Whether to wrap the widget with [Semantics] for external QA automation tools.
+  /// Defaults to true. If false, only attaches [MetaData] for heatmap tracking.
+  final bool enableSemantics;
+
   const ShepherdElementKey({
     super.key,
     required this.id,
     required this.child,
+    this.enableSemantics = true,
   });
 
   @override
   Widget build(BuildContext context) {
+    final content = MetaData(
+      metaData: ShepherdElementMetaData(id: id),
+      child: child,
+    );
+
+    if (!enableSemantics) {
+      return content;
+    }
+
     return Semantics(
-      container: true,
-      explicitChildNodes: true,
-      label: id,
       identifier: id,
-      child: MetaData(
-        metaData: ShepherdElementMetaData(id: id),
-        child: child,
-      ),
+      child: content,
     );
   }
 }
