@@ -1,3 +1,7 @@
+## 0.0.8 - 2026-07-23
+
+* Set `HitTestBehavior.translucent` on `MetaData` in `ShepherdPageKey` and `ShepherdElementKey` to ensure hit testing reliably captures metadata during click interactions.
+
 ## 0.0.7 - 2026-06-29
 
 * Expose public metadata classes (`ShepherdPageMetaData` and `ShepherdElementMetaData`) to support hit-testing and pointer interaction tracking (e.g. for heatmap analysis).
