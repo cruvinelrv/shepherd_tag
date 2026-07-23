@@ -58,6 +58,7 @@ class ShepherdPageKey extends StatelessWidget {
   Widget build(BuildContext context) {
     return MetaData(
       metaData: ShepherdPageMetaData(id: id, isReady: isReady),
+      behavior: HitTestBehavior.translucent,
       child: Stack(
         children: [
           // Render the tag physically behind the application child so it is

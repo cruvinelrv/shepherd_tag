@@ -28,6 +28,7 @@ class ShepherdElementKey extends StatelessWidget {
   Widget build(BuildContext context) {
     final content = MetaData(
       metaData: ShepherdElementMetaData(id: id),
+      behavior: HitTestBehavior.translucent,
       child: child,
     );
 
